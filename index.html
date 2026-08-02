@@ -1,115 +1,216 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="gu">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GJ invitation</title>
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
 
-<title>GJINVITATION</title>
+        body {
+            background-color: #f0f2f5;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
 
-<link rel="stylesheet" href="style.css">
+        .container {
+            width: 100%;
+            max-width: 400px;
+            background: #ffffff;
+            border-radius: 20px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
 
-<link rel="stylesheet"
-href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+        /* Top Red Header */
+        .header {
+            background-color: #c91c1c;
+            color: #ffffff;
+            text-align: center;
+            padding: 25px 15px;
+        }
 
+        .header h1 {
+            font-size: 36px;
+            font-weight: 800;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        /* Card Content */
+        .content {
+            padding: 20px;
+            background: #fff;
+            border: 1px solid #fce4ec;
+            border-top: none;
+            border-bottom-left-radius: 20px;
+            border-bottom-right-radius: 20px;
+        }
+
+        /* Video Section */
+        .video-box {
+            width: 100%;
+            border-radius: 12px;
+            overflow: hidden;
+            background: #000;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+        }
+
+        .video-box video {
+            width: 100%;
+            display: block;
+            border-radius: 12px;
+        }
+
+        /* Title Style */
+        .product-title {
+            font-size: 22px;
+            font-weight: 700;
+            color: #111;
+            margin-bottom: 15px;
+        }
+
+        /* Price Style */
+        .price-section {
+            display: flex;
+            align-items: baseline;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+
+        .price-section .only {
+            font-size: 18px;
+            color: #333;
+            font-weight: 500;
+        }
+
+        .price-section .amount {
+            font-size: 38px;
+            font-weight: 900;
+            color: #000;
+            letter-spacing: -1px;
+        }
+
+        /* Features List */
+        .features-list {
+            list-style: none;
+            margin-bottom: 25px;
+        }
+
+        .features-list li {
+            display: flex;
+            align-items: center;
+            font-size: 16px;
+            color: #333;
+            margin-bottom: 12px;
+            font-weight: 500;
+        }
+
+        .features-list li i {
+            margin-right: 12px;
+            font-size: 18px;
+            color: #444;
+            width: 20px;
+            text-align: center;
+        }
+
+        /* WhatsApp Button */
+        .whatsapp-btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #25D366;
+            color: #ffffff;
+            text-decoration: none;
+            padding: 15px;
+            border-radius: 10px;
+            font-size: 18px;
+            font-weight: 700;
+            box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4);
+            transition: background 0.3s ease;
+            margin-bottom: 15px;
+        }
+
+        .whatsapp-btn i {
+            margin-right: 10px;
+            font-size: 24px;
+        }
+
+        .whatsapp-btn:hover {
+            background-color: #1ebe5d;
+        }
+
+        /* Secure Badge */
+        .secure-badge {
+            text-align: center;
+            font-size: 14px;
+            color: #2e7d32;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 6px;
+        }
+    </style>
 </head>
-
 <body>
 
-<header>
+    <div class="container">
+        <!-- Top Banner -->
+        <div class="header">
+            <h1>GJ invitation</h1>
+        </div>
 
-<div class="menu">
-<i class="fas fa-bars"></i>
-</div>
+        <!-- Main Card Body -->
+        <div class="content">
+            <!-- Video Tab -->
+            <div class="video-box">
+                <video controls poster="">
+                    <!-- Replace yourvideo.mp4 with your actual video link -->
+                    <source src="yourvideo.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
 
-<div class="logo">
-GJINVITATION
-</div>
+            <!-- Title -->
+            <div class="product-title">Baby Shower Invitation Video</div>
 
-<div class="cart">
-<i class="fas fa-cart-shopping"></i>
-</div>
+            <!-- Price -->
+            <div class="price-section">
+                <span class="only">Only for</span>
+                <span class="amount">380 ₹</span>
+            </div>
 
-</header>
+            <!-- Features -->
+            <ul class="features-list">
+                <li><i class="fa-solid fa-gift"></i> Full HD Video</li>
+                <li><i class="fa-solid fa-music"></i> Background Music</li>
+                <li><i class="fa-solid fa-pen-nib"></i> Customize Details</li>
+                <li><i class="fa-solid fa-paper-plane"></i> 24-48 Hours Delivery</li>
+            </ul>
 
-<section class="hero">
+            <!-- Buy Now WhatsApp Button -->
+            <a href="https://wa.me/919904564376?text=Hello,%20I%20want%20to%20buy%20Baby%20Shower%20Invitation%20Video" target="_blank" class="whatsapp-btn">
+                <i class="fa-brands fa-whatsapp"></i> BUY NOW ON WHATSAPP
+            </a>
 
-<img src="images/banner.jpg" alt="Banner">
-
-<div class="hero-text">
-
-<h1>Make Your Special Moments More Special</h1>
-
-<a href="#" class="btn">Explore Designs</a>
-
-</div>
-
-</section>
-
-<section class="title">
-
-<h2>Categories</h2>
-
-</section>
-
-<section class="cards">
-
-<a href="wedding.html" class="card">
-
-<img src="images/wedding.jpg">
-
-<div class="text">
-
-<h3>Wedding Invitations</h3>
-
-<span>></span>
-
-</div>
-
-</a>
-
-<a href="birthday.html" class="card">
-
-<img src="images/birthday.jpg">
-
-<div class="text">
-
-<h3>Birthday Invitations</h3>
-
-<span>></span>
-
-</div>
-
-</a>
-
-<a href="babyshower.html" class="card">
-
-<img src="images/babyshower.jpg">
-
-<div class="text">
-
-<h3>Baby Shower Invitations</h3>
-
-<span>></span>
-
-</div>
-
-</a>
-
-<a href="anniversary.html" class="card">
-
-<img src="images/anniversary.jpg">
-
-<div class="text">
-
-<h3>Anniversary Invitations</h3>
-
-<span>></span>
-
-</div>
-
-</a>
-
-</section>
+            <!-- Secure Footer Text -->
+            <div class="secure-badge">
+                <i class="fa-solid fa-shield-check"></i> 100% Safe & Secure
+            </div>
+        </div>
+    </div>
 
 </body>
 </html>
