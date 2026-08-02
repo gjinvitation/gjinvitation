@@ -1,256 +1,259 @@
-<!DOCTYPE html>
-<html lang="gu">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GJ invitation</title>
-    <!-- FontAwesome for Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <style>
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
-
-        body {
-            background-color: #f0f2f5;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-            padding: 20px;
-        }
-
-        .container {
-            width: 100%;
-            max-width: 400px;
-            background: #ffffff;
-            border-radius: 20px;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
-            overflow: hidden;
-        }
-
-        /* Top Red Header */
-        .header {
-            background-color: #c91c1c;
-            color: #ffffff;
-            text-align: center;
-            padding: 25px 15px;
-        }
-
-        .header h1 {
-            font-size: 36px;
-            font-weight: 800;
-            letter-spacing: 1px;
-            text-transform: uppercase;
-        }
-
-        /* Card Content */
-        .content {
-            padding: 20px;
-            background: #fff;
-            border: 1px solid #fce4ec;
-            border-top: none;
-            border-bottom-left-radius: 20px;
-            border-bottom-right-radius: 20px;
-        }
-
-        /* Video Section */
-        .video-box {
-            width: 100%;
-            border-radius: 12px;
-            overflow: hidden;
-            background: #000;
-            margin-bottom: 20px;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.15);
-            position: relative;
-        }
-
-        .video-box video {
-            width: 100%;
-            display: block;
-            border-radius: 12px;
-        }
-
-        /* WhatsApp Number Overlay on Video Tab */
-        .whatsapp-overlay-badge {
-            position: absolute;
-            top: 12px;
-            right: 12px;
-            background-color: #25D366;
-            color: #ffffff;
-            padding: 6px 12px;
-            border-radius: 20px;
-            font-size: 13px;
-            font-weight: 700;
-            display: flex;
-            align-items: center;
-            gap: 6px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.3);
-            z-index: 10;
-        }
-
-        .whatsapp-overlay-badge i {
-            font-size: 15px;
-        }
-
-        /* Title Style */
-        .product-title {
-            font-size: 22px;
-            font-weight: 700;
-            color: #111;
-            margin-bottom: 15px;
-        }
-
-        /* Price Style */
-        .price-section {
-            display: flex;
-            align-items: baseline;
-            gap: 10px;
-            margin-bottom: 20px;
-        }
-
-        .price-section .only {
-            font-size: 18px;
-            color: #333;
-            font-weight: 500;
-        }
-
-        .price-section .amount {
-            font-size: 38px;
-            font-weight: 900;
-            color: #000;
-            letter-spacing: -1px;
-        }
-
-        /* Features List */
-        .features-list {
-            list-style: none;
-            margin-bottom: 25px;
-        }
-
-        .features-list li {
-            display: flex;
-            align-items: center;
-            font-size: 16px;
-            color: #333;
-            margin-bottom: 12px;
-            font-weight: 500;
-        }
-
-        .features-list li i {
-            margin-right: 12px;
-            font-size: 18px;
-            color: #444;
-            width: 20px;
-            text-align: center;
-        }
-
-        /* WhatsApp Button with Highlight Pulse Animation */
-        @keyframes pulse-glow {
-            0% {
-                box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7);
-            }
-            70% {
-                box-shadow: 0 0 0 15px rgba(37, 211, 102, 0);
-            }
-            100% {
-                box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
-            }
-        }
-
-        .whatsapp-btn {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background-color: #25D366;
-            color: #ffffff;
-            text-decoration: none;
-            padding: 15px;
-            border-radius: 10px;
-            font-size: 18px;
-            font-weight: 700;
-            box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4);
-            transition: background 0.3s ease;
-            margin-bottom: 15px;
-            animation: pulse-glow 2s infinite;
-        }
-
-        .whatsapp-btn i {
-            margin-right: 10px;
-            font-size: 24px;
-        }
-
-        .whatsapp-btn:hover {
-            background-color: #1ebe5d;
-        }
-
-        /* Secure Badge */
-        .secure-badge {
-            text-align: center;
-            font-size: 14px;
-            color: #2e7d32;
-            font-weight: 600;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 6px;
-        }
+<!DOCTYPE html>        
+<html lang="gu">        
+<head>        
+    <meta charset="UTF-8">        
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">        
+    <title>GJ invitation</title>        
+    <!-- FontAwesome for Icons -->        
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">        
+    <style>        
+        * {        
+            box-sizing: border-box;        
+            margin: 0;        
+            padding: 0;        
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;        
+        }        
+        body {        
+            background-color: #f0f2f5;        
+            display: flex;        
+            justify-content: center;        
+            align-items: center;        
+            min-height: 100vh;        
+            padding: 20px;        
+        }        
+        
+        .container {        
+            width: 100%;        
+            max-width: 400px;        
+            background: #ffffff;        
+            border-radius: 20px;        
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);        
+            overflow: hidden;        
+        }        
+        
+        /* Top Red Header */        
+        .header {        
+            background-color: #c91c1c;        
+            color: #ffffff;        
+            text-align: center;        
+            padding: 25px 15px;        
+        }        
+        
+        .header h1 {        
+            font-size: 36px;        
+            font-weight: 800;        
+            letter-spacing: 1px;        
+            text-transform: uppercase;        
+        }        
+        
+        /* Card Content */        
+        .content {        
+            padding: 20px;        
+            background: #fff;        
+            border: 1px solid #fce4ec;        
+            border-top: none;        
+            border-bottom-left-radius: 20px;        
+            border-bottom-right-radius: 20px;        
+        }        
+        
+        /* Video Section */        
+        .video-box {        
+            width: 100%;        
+            border-radius: 12px;        
+            overflow: hidden;        
+            background: #000;        
+            margin-bottom: 20px;        
+            box-shadow: 0 4px 10px rgba(0,0,0,0.15);        
+            position: relative;        
+        }        
+        
+        .video-box video {        
+            width: 100%;        
+            display: block;        
+            border-radius: 12px;        
+        }        
+        
+        /* WhatsApp Number Overlay on Video Tab as a Clickable Link */        
+        .whatsapp-overlay-badge {        
+            position: absolute;        
+            top: 12px;        
+            right: 12px;        
+            background-color: #25D366;        
+            color: #ffffff;        
+            padding: 6px 12px;        
+            border-radius: 20px;        
+            font-size: 13px;        
+            font-weight: 700;        
+            display: flex;        
+            align-items: center;        
+            gap: 6px;        
+            box-shadow: 0 2px 8px rgba(0,0,0,0.3);        
+            z-index: 10;        
+            text-decoration: none;        
+            transition: background 0.3s ease;        
+        }        
+        
+        .whatsapp-overlay-badge:hover {        
+            background-color: #1ebe5d;        
+        }        
+        
+        .whatsapp-overlay-badge i {        
+            font-size: 15px;        
+        }        
+        
+        /* Title Style */        
+        .product-title {        
+            font-size: 22px;        
+            font-weight: 700;        
+            color: #111;        
+            margin-bottom: 15px;        
+        }        
+        
+        /* Price Style */        
+        .price-section {        
+            display: flex;        
+            align-items: baseline;        
+            gap: 10px;        
+            margin-bottom: 20px;        
+        }        
+        
+        .price-section .only {        
+            font-size: 18px;        
+            color: #333;        
+            font-weight: 500;        
+        }        
+        
+        .price-section .amount {        
+            font-size: 38px;        
+            font-weight: 900;        
+            color: #000;        
+            letter-spacing: -1px;        
+        }        
+        
+        /* Features List */        
+        .features-list {        
+            list-style: none;        
+            margin-bottom: 25px;        
+        }        
+        
+        .features-list li {        
+            display: flex;        
+            align-items: center;        
+            font-size: 16px;        
+            color: #333;        
+            margin-bottom: 12px;        
+            font-weight: 500;        
+        }        
+        
+        .features-list li i {        
+            margin-right: 12px;        
+            font-size: 18px;        
+            color: #444;        
+            width: 20px;        
+            text-align: center;        
+        }        
+        
+        /* WhatsApp Button with Highlight Pulse Animation */        
+        @keyframes pulse-glow {        
+            0% {        
+                box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7);        
+            }        
+            70% {        
+                box-shadow: 0 0 0 15px rgba(37, 211, 102, 0);        
+            }        
+            100% {        
+                box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);        
+            }        
+        }        
+        
+        .whatsapp-btn {        
+            display: flex;        
+            align-items: center;        
+            justify-content: center;        
+            background-color: #25D366;        
+            color: #ffffff;        
+            text-decoration: none;        
+            padding: 15px;        
+            border-radius: 10px;        
+            font-size: 18px;        
+            font-weight: 700;        
+            box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4);        
+            transition: background 0.3s ease;        
+            margin-bottom: 15px;        
+            animation: pulse-glow 2s infinite;        
+        }        
+        
+        .whatsapp-btn i {        
+            margin-right: 10px;        
+            font-size: 24px;        
+        }        
+        
+        .whatsapp-btn:hover {        
+            background-color: #1ebe5d;        
+        }        
+        
+        /* Secure Badge */        
+        .secure-badge {        
+            text-align: center;        
+            font-size: 14px;        
+            color: #2e7d32;        
+            font-weight: 600;        
+            display: flex;        
+            align-items: center;        
+            justify-content: center;        
+            gap: 6px;        
+        }        
     </style>
-</head>
-<body>
-
-    <div class="container">
-        <!-- Top Banner -->
-        <div class="header">
-            <h1>GJ invitation</h1>
-        </div>
-
-        <!-- Main Card Body -->
-        <div class="content">
-            <!-- Video Tab -->
-            <div class="video-box">
-                <!-- WhatsApp Number Badge on Video Tab -->
-                <div class="whatsapp-overlay-badge">
-                    <i class="fa-brands fa-whatsapp"></i> What's app 9904564376
-                </div>
-                <video controls poster="">
-                    <!-- Replace yourvideo.mp4 with your actual video link -->
-                    <source src="yourvideo.mp4" type="video/mp4">
-                    Your browser does not support the video tag.
-                </video>
-            </div>
-
-            <!-- Title -->
-            <div class="product-title">Baby Shower Invitation Video</div>
-
-            <!-- Price -->
-            <div class="price-section">
-                <span class="only">Only for</span>
-                <span class="amount">380 ₹</span>
-            </div>
-
-            <!-- Features -->
-            <ul class="features-list">
-                <li><i class="fa-solid fa-gift"></i> Full HD Document in Video</li>
-                <li><i class="fa-solid fa-music"></i> Background Music</li>
-                <li><i class="fa-solid fa-pen-nib"></i> Customize Details</li>
-                <li><i class="fa-solid fa-paper-plane"></i> 24-48 Hours Delivery</li>
-            </ul>
-
-            <!-- Buy Now WhatsApp Button -->
-            <a href="https://wa.me/c/919904564376" target="_blank" class="whatsapp-btn">
-                <i class="fa-brands fa-whatsapp"></i> BUY NOW ON WHATSAPP
-            </a>
-
-            <!-- Secure Footer Text -->
-            <div class="secure-badge">
-                <i class="fa-solid fa-shield-check"></i> 100% Safe & Secure
-            </div>
-        </div>
+</head>        
+<body>        
+    <div class="container">        
+        <!-- Top Banner -->        
+        <div class="header">        
+            <h1>GJ invitation</h1>        
+        </div>        
+        
+        <!-- Main Card Body -->        
+        <div class="content">        
+            <!-- Video Tab -->        
+            <div class="video-box">        
+                <!-- WhatsApp Catalog Link on Video Tab -->        
+                <a href="https://wa.me/c/919904564376" target="_blank" class="whatsapp-overlay-badge">        
+                    <i class="fa-brands fa-whatsapp"></i> What's app 9904564376        
+                </a>        
+                <video controls poster="">        
+                    <!-- Video file name set to yourvideo.mp4 -->        
+                    <source src="yourvideo.mp4" type="video/mp4">        
+                    Your browser does not support the video tag.        
+                </video>        
+            </div>        
+        
+            <!-- Title -->        
+            <div class="product-title">Baby Shower Invitation Video</div>        
+        
+            <!-- Price -->        
+            <div class="price-section">        
+                <span class="only">Only for</span>        
+                <span class="amount">380 ₹</span>        
+            </div>        
+        
+            <!-- Features -->        
+            <ul class="features-list">        
+                <li><i class="fa-solid fa-gift"></i> Full HD Document in Video</li>        
+                <li><i class="fa-solid fa-music"></i> Background Music</li>        
+                <li><i class="fa-solid fa-pen-nib"></i> Customize Details</li>        
+                <li><i class="fa-solid fa-paper-plane"></i> 24-48 Hours Delivery</li>        
+            </ul>        
+        
+            <!-- Buy Now WhatsApp Button -->        
+            <a href="https://wa.me/919904564376?text=Hello,%20I%20want%20to%20buy%20Baby%20Shower%20Invitation%20Video" target="_blank" class="whatsapp-btn">        
+                <i class="fa-brands fa-whatsapp"></i> BUY NOW ON WHATSAPP        
+            </a>        
+        
+            <!-- Secure Footer Text -->        
+            <div class="secure-badge">        
+                <i class="fa-solid fa-shield-check"></i> 100% Safe & Secure        
+            </div>        
+        </div>        
     </div>
-
-</body>
-                </html>
+</body>        
+                                                                       </html>
