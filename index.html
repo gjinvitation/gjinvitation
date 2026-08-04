@@ -1,259 +1,413 @@
-<!DOCTYPE html>        
-<html lang="gu">        
-<head>        
-    <meta charset="UTF-8">        
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">        
-    <title>GJ invitation</title>        
-    <!-- FontAwesome for Icons -->        
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">        
-    <style>        
-        * {        
-            box-sizing: border-box;        
-            margin: 0;        
-            padding: 0;        
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;        
-        }        
-        body {        
-            background-color: #f0f2f5;        
-            display: flex;        
-            justify-content: center;        
-            align-items: center;        
-            min-height: 100vh;        
-            padding: 20px;        
-        }        
-        
-        .container {        
-            width: 100%;        
-            max-width: 400px;        
-            background: #ffffff;        
-            border-radius: 20px;        
-            box-shadow: 0 10px 25px rgba(0,0,0,0.1);        
-            overflow: hidden;        
-        }        
-        
-        /* Top Red Header */        
-        .header {        
-            background-color: #c91c1c;        
-            color: #ffffff;        
-            text-align: center;        
-            padding: 25px 15px;        
-        }        
-        
-        .header h1 {        
-            font-size: 36px;        
-            font-weight: 800;        
-            letter-spacing: 1px;        
-            text-transform: uppercase;        
-        }        
-        
-        /* Card Content */        
-        .content {        
-            padding: 20px;        
-            background: #fff;        
-            border: 1px solid #fce4ec;        
-            border-top: none;        
-            border-bottom-left-radius: 20px;        
-            border-bottom-right-radius: 20px;        
-        }        
-        
-        /* Video Section */        
-        .video-box {        
-            width: 100%;        
-            border-radius: 12px;        
-            overflow: hidden;        
-            background: #000;        
-            margin-bottom: 20px;        
-            box-shadow: 0 4px 10px rgba(0,0,0,0.15);        
-            position: relative;        
-        }        
-        
-        .video-box video {        
-            width: 100%;        
-            display: block;        
-            border-radius: 12px;        
-        }        
-        
-        /* WhatsApp Number Overlay on Video Tab as a Clickable Link */        
-        .whatsapp-overlay-badge {        
-            position: absolute;        
-            top: 12px;        
-            right: 12px;        
-            background-color: #25D366;        
-            color: #ffffff;        
-            padding: 6px 12px;        
-            border-radius: 20px;        
-            font-size: 13px;        
-            font-weight: 700;        
-            display: flex;        
-            align-items: center;        
-            gap: 6px;        
-            box-shadow: 0 2px 8px rgba(0,0,0,0.3);        
-            z-index: 10;        
-            text-decoration: none;        
-            transition: background 0.3s ease;        
-        }        
-        
-        .whatsapp-overlay-badge:hover {        
-            background-color: #1ebe5d;        
-        }        
-        
-        .whatsapp-overlay-badge i {        
-            font-size: 15px;        
-        }        
-        
-        /* Title Style */        
-        .product-title {        
-            font-size: 22px;        
-            font-weight: 700;        
-            color: #111;        
-            margin-bottom: 15px;        
-        }        
-        
-        /* Price Style */        
-        .price-section {        
-            display: flex;        
-            align-items: baseline;        
-            gap: 10px;        
-            margin-bottom: 20px;        
-        }        
-        
-        .price-section .only {        
-            font-size: 18px;        
-            color: #333;        
-            font-weight: 500;        
-        }        
-        
-        .price-section .amount {        
-            font-size: 38px;        
-            font-weight: 900;        
-            color: #000;        
-            letter-spacing: -1px;        
-        }        
-        
-        /* Features List */        
-        .features-list {        
-            list-style: none;        
-            margin-bottom: 25px;        
-        }        
-        
-        .features-list li {        
-            display: flex;        
-            align-items: center;        
-            font-size: 16px;        
-            color: #333;        
-            margin-bottom: 12px;        
-            font-weight: 500;        
-        }        
-        
-        .features-list li i {        
-            margin-right: 12px;        
-            font-size: 18px;        
-            color: #444;        
-            width: 20px;        
-            text-align: center;        
-        }        
-        
-        /* WhatsApp Button with Highlight Pulse Animation */        
-        @keyframes pulse-glow {        
-            0% {        
-                box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7);        
-            }        
-            70% {        
-                box-shadow: 0 0 0 15px rgba(37, 211, 102, 0);        
-            }        
-            100% {        
-                box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);        
-            }        
-        }        
-        
-        .whatsapp-btn {        
-            display: flex;        
-            align-items: center;        
-            justify-content: center;        
-            background-color: #25D366;        
-            color: #ffffff;        
-            text-decoration: none;        
-            padding: 15px;        
-            border-radius: 10px;        
-            font-size: 18px;        
-            font-weight: 700;        
-            box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4);        
-            transition: background 0.3s ease;        
-            margin-bottom: 15px;        
-            animation: pulse-glow 2s infinite;        
-        }        
-        
-        .whatsapp-btn i {        
-            margin-right: 10px;        
-            font-size: 24px;        
-        }        
-        
-        .whatsapp-btn:hover {        
-            background-color: #1ebe5d;        
-        }        
-        
-        /* Secure Badge */        
-        .secure-badge {        
-            text-align: center;        
-            font-size: 14px;        
-            color: #2e7d32;        
-            font-weight: 600;        
-            display: flex;        
-            align-items: center;        
-            justify-content: center;        
-            gap: 6px;        
-        }        
+>        <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GJ Invitation - Digital Invitation Videos & Cards</title>
+    
+    <!-- Open Graph / Social Media Meta Tags for Link Preview Images -->
+    <meta property="og:title" content="GJ Invitation - Digital Invitation Videos & Cards">
+    <meta property="og:description" content="Baby Shower Invitation Video Only for 380 ₹ Full HD Document in Video, Background Music, Customize Details, 24-48 Hours Delivery. BUY NOW ON WHATSAPP!">
+    <meta property="og:image" content="https://images.unsplash.com/photo-1519741497674-611481863552?w=800">
+    <meta property="og:url" content="http://gjinvitation.com">
+    <meta property="og:type" content="website">
+
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="GJ Invitation - Digital Invitation Videos & Cards">
+    <meta name="twitter:description" content="Baby Shower Invitation Video Only for 380 ₹ Full HD Document in Video, Background Music, Customize Details, 24-48 Hours Delivery.">
+    <meta name="twitter:image" content="https://images.unsplash.com/photo-1519741497674-611481863552?w=800">
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: #fffaf5;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        header {
+            background: linear-gradient(135deg, #fff0e6, #ffe6d5);
+            padding: 20px 15px;
+            text-align: center;
+            border-bottom: 3px solid #ff7b00;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .logo-img {
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            border: 2px solid #ff7b00;
+            object-fit: cover;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+        }
+
+        .brand-name {
+            font-size: 2.2rem;
+            font-weight: 800;
+            color: #d94e00;
+            letter-spacing: 1px;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+        }
+
+        @keyframes pulseGlow {
+            0% {
+                transform: scale(1);
+                color: #27ae60;
+                text-shadow: 0 0 5px rgba(39, 174, 96, 0.4);
+            }
+            50% {
+                transform: scale(1.08);
+                color: #2ecc71;
+                text-shadow: 0 0 15px rgba(46, 204, 113, 0.8);
+            }
+            100% {
+                transform: scale(1);
+                color: #27ae60;
+                text-shadow: 0 0 5px rgba(39, 174, 96, 0.4);
+            }
+        }
+
+        .phone-highlight {
+            display: inline-block;
+            margin-top: 5px;
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: #27ae60;
+            background: #e8f8f0;
+            padding: 4px 12px;
+            border-radius: 20px;
+            border: 1px dashed #2ecc71;
+            animation: pulseGlow 1.5s infinite ease-in-out;
+            text-decoration: none;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 0 15px;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 1.8rem;
+            color: #b33939;
+            margin: 30px 0 20px 0;
+            font-weight: 700;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 3px;
+            background: #b33939;
+            margin: 8px auto 0 auto;
+            border-radius: 2px;
+        }
+
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            margin-bottom: 40px;
+        }
+
+        .product-card {
+            background: #ffffff;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+            border: 1px solid #ffe0d0;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 25px rgba(255, 123, 0, 0.15);
+        }
+
+        .media-container {
+            width: 100%;
+            height: 380px;
+            background: #000;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .media-container img, .media-container video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .badge {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            background: rgba(0, 0, 0, 0.7);
+            color: #fff;
+            padding: 4px 10px;
+            font-size: 0.8rem;
+            border-radius: 20px;
+            backdrop-filter: blur(4px);
+        }
+
+        .product-info {
+            padding: 15px;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .product-title {
+            font-size: 1.15rem;
+            font-weight: 700;
+            color: #2c3e50;
+            margin-bottom: 8px;
+        }
+
+        .price-tag {
+            font-size: 1.3rem;
+            font-weight: 800;
+            color: #e74c3c;
+            margin-bottom: 12px;
+        }
+
+        .price-tag span {
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: #7f8c8d;
+        }
+
+        .features-list {
+            list-style: none;
+            margin-bottom: 15px;
+            font-size: 0.9rem;
+            color: #555;
+        }
+
+        .features-list li {
+            margin-bottom: 5px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        @keyframes buttonPulse {
+            0% {
+                transform: scale(1);
+                box-shadow: 0 4px 12px rgba(37, 211, 102, 0.4);
+            }
+            50% {
+                transform: scale(1.03);
+                box-shadow: 0 6px 20px rgba(37, 211, 102, 0.7);
+            }
+            100% {
+                transform: scale(1);
+                box-shadow: 0 4px 12px rgba(37, 211, 102, 0.4);
+            }
+        }
+
+        .whatsapp-btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            background-color: #25d366;
+            color: white;
+            text-decoration: none;
+            padding: 12px 15px;
+            border-radius: 30px;
+            font-weight: 700;
+            font-size: 1rem;
+            text-align: center;
+            animation: buttonPulse 2s infinite ease-in-out;
+            transition: background-color 0.2s;
+        }
+
+        .whatsapp-btn:hover {
+            background-color: #20ba5a;
+        }
+
+        .whatsapp-btn svg {
+            width: 22px;
+            height: 22px;
+            fill: white;
+        }
+
+        .footer-banner {
+            text-align: center;
+            padding: 30px 20px;
+            background: linear-gradient(135deg, #25d366, #128c7e);
+            color: white;
+            border-radius: 15px;
+            margin: 40px 0;
+            box-shadow: 0 6px 20px rgba(37, 211, 102, 0.3);
+        }
+
+        .footer-banner h3 {
+            font-size: 1.6rem;
+            margin-bottom: 10px;
+        }
+
+        .footer-banner p {
+            font-size: 1.1rem;
+            margin-bottom: 20px;
+            opacity: 0.95;
+        }
+
+        .instagram-link {
+            display: inline-block;
+            margin-top: 15px;
+            font-size: 1.1rem;
+            color: #fff;
+            text-decoration: underline;
+            font-weight: 600;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            font-size: 0.9rem;
+            color: #666;
+            border-top: 1px solid #ddd;
+            background: #fff;
+        }
     </style>
-</head>        
-<body>        
-    <div class="container">        
-        <!-- Top Banner -->        
-        <div class="header">        
-            <h1>GJ invitation</h1>        
-        </div>        
+</head>
+<body>
+
+    <header>
+        <div class="logo-container">
+            <img src="https://images.unsplash.com/photo-1513151233558-d860c5398176?w=150" alt="GJ Invitation Logo" class="logo-img">
+            <div>
+                <div class="brand-name">GJ invitation</div>
+                <a href="https://wa.me/919904564376" class="phone-highlight">📞 9904564376</a>
+            </div>
+        </div>
+    </header>
+
+    <div class="container">
         
-        <!-- Main Card Body -->        
-        <div class="content">        
-            <!-- Video Tab -->        
-            <div class="video-box">        
-                <!-- WhatsApp Catalog Link on Video Tab -->        
-                <a href="https://wa.me/c/919904564376" target="_blank" class="whatsapp-overlay-badge">        
-                    <i class="fa-brands fa-whatsapp"></i> What's app 9904564376        
-                </a>        
-                <video controls poster="">        
-                    <!-- Video file name set to yourvideo.mp4 -->        
-                    <source src="yourvideo.mp4" type="video/mp4">        
-                    Your browser does not support the video tag.        
-                </video>        
-            </div>        
-        
-            <!-- Title -->        
-            <div class="product-title">Baby Shower Invitation Video</div>        
-        
-            <!-- Price -->        
-            <div class="price-section">        
-                <span class="only">Only for</span>        
-                <span class="amount">380 ₹</span>        
-            </div>        
-        
-            <!-- Features -->        
-            <ul class="features-list">        
-                <li><i class="fa-solid fa-gift"></i> Full HD Document in Video</li>        
-                <li><i class="fa-solid fa-music"></i> Background Music</li>        
-                <li><i class="fa-solid fa-pen-nib"></i> Customize Details</li>        
-                <li><i class="fa-solid fa-paper-plane"></i> 24-48 Hours Delivery</li>        
-            </ul>        
-        
-            <!-- Buy Now WhatsApp Button -->        
-            <a href="https://wa.me/919904564376?text=Hello,%20I%20want%20to%20buy%20Baby%20Shower%20Invitation%20Video" target="_blank" class="whatsapp-btn">        
-                <i class="fa-brands fa-whatsapp"></i> BUY NOW ON WHATSAPP        
-            </a>        
-        
-            <!-- Secure Footer Text -->        
-            <div class="secure-badge">        
-                <i class="fa-solid fa-shield-check"></i> 100% Safe & Secure        
-            </div>        
-        </div>        
+        <h2 class="section-title">Invitation Video Samples</h2>
+        <div class="products-grid">
+            
+            <div class="product-card">
+                <div class="media-container">
+                    <span class="badge">Video Invitation</span>
+                    <video autoplay muted loop playsinline poster="https://images.unsplash.com/photo-1519741497674-611481863552?w=500">
+                        <source src="https://assets.mixkit.co/videos/preview/mixkit-baby-feet-in-a-hand-42028-large.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+                <div class="product-info">
+                    <div>
+                        <div class="product-title">Baby Shower Invitation Video</div>
+                        <div class="price-tag">380 ₹ <span>Only for</span></div>
+                        <ul class="features-list">
+                            <li>🎁 Full HD Document in Video</li>
+                            <li>🎵 Background Music</li>
+                            <li>✍️ Customize Details</li>
+                            <li>⚡ 24-48 Hours Delivery</li>
+                        </ul>
+                    </div>
+                    <a href="https://wa.me/919904564376?text=Hello,%20I%20want%20to%20order%20Baby%20Shower%20Invitation%20Video%20for%20380%20Rs" class="whatsapp-btn" target="_blank">
+                        <svg viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+                        BUY NOW ON WHATSAPP
+                    </a>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div class="media-container">
+                    <span class="badge">Video Invitation</span>
+                    <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=500" alt="Baby Shower Invitation">
+                </div>
+                <div class="product-info">
+                    <div>
+                        <div class="product-title">Baby Shower Invitation Video</div>
+                        <div class="price-tag">380 ₹ <span>Only for</span></div>
+                        <ul class="features-list">
+                            <li>🎁 Full HD Document in Video</li>
+                            <li>🎵 Background Music</li>
+                            <li>✍️ Customize Details</li>
+                            <li>⚡ 24-48 Hours Delivery</li>
+                        </ul>
+                    </div>
+                    <a href="https://wa.me/919904564376?text=Hello,%20I%20want%20to%20order%20Baby%20Shower%20Invitation%20Video%20for%20380%20Rs" class="whatsapp-btn" target="_blank">
+                        <svg viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+                        BUY NOW ON WHATSAPP
+                    </a>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div class="media-container">
+                    <span class="badge">Video Invitation</span>
+                    <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=500" alt="Baby Shower Invitation">
+                </div>
+                <div class="product-info">
+                    <div>
+                        <div class="product-title">Baby Shower Invitation Video</div>
+                        <div class="price-tag">380 ₹ <span>Only for</span></div>
+                        <ul class="features-list">
+                            <li>🎁 Full HD Document in Video</li>
+                            <li>🎵 Background Music</li>
+                            <li>✍️ Customize Details</li>
+                            <li>⚡ 24-48 Hours Delivery</li>
+                        </ul>
+                    </div>
+                    <a href="https://wa.me/919904564376?text=Hello,%20I%20want%20to%20order%20Baby%20Shower%20Invitation%20Video%20for%20380%20Rs" class="whatsapp-btn" target="_blank">
+                        <svg viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+                        BUY NOW ON WHATSAPP
+                    </a>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="footer-banner">
+            <h3>More designs in instagram</h3>
+            <p>Check out our Instagram page for more designs</p>
+            <a href="https://instagram.com/gjinvitation" class="instagram-link" target="_blank">@gjinvitation</a>
+            <div style="margin-top: 20px;">
+                <a href="https://wa.me/919904564376" class="whatsapp-btn" style="max-width: 300px; margin: 0 auto; background: #fff; color: #25d366;" target="_blank">
+                    <svg viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+                    CHAT ON WHATSAPP
+                </a>
+            </div>
+        </div>
+
     </div>
-</body>        
+
+    <footer>
+        <p>&copy; 2026 GJ Invitation. All Rights Reserved.</p>
+    </footer>
+
+</body>
+</html>
                                                                        </html>
